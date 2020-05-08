@@ -1,0 +1,9 @@
+.DS_Store
+*.java~
+*.txt
+TextPlanner.class
+TextPlanner.java
+PlannerIO.class
+PlannerIO.java
+GUI.class
+GUI.java
