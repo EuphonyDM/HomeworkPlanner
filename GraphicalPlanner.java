@@ -92,12 +92,17 @@ public class GraphicalPlanner implements ActionListener
       System.out.println("adding");
       
       String n=(String)JOptionPane.showInputDialog(frame,"Enter assignment name:","Add",1,null,null,null);
-      Date d=Date.parseDate((String)JOptionPane.showInputDialog(frame,"Enter assignment date:\n(mm/dd/yy)","Add",1,null,null,null));
-      
-      hp.add(new Homework(n,d));
-      //hp.save();
-      assignments.revalidate();
-      //updateDisplay();
+      if(n!=null){
+        String dateString=(String)JOptionPane.showInputDialog(frame,"Enter assignment date:\n(mm/dd/yy)","Add",1,null,null,null);
+        if(dateString!=null){
+          Date d=Date.parseDate(dateString);
+          
+          hp.add(new Homework(n,d));
+          //hp.save();
+          assignments.revalidate();
+          //updateDisplay();
+        }
+      }
     }
     else if (e.getActionCommand().equals("remove"))
     {
@@ -107,11 +112,14 @@ public class GraphicalPlanner implements ActionListener
         for(int i=0;i<nums.length;i++)
           nums[i]=""+i;
         
-        int x=Integer.parseInt((String)JOptionPane.showInputDialog(frame,"Which assignment do you want to remove?","Remove",JOptionPane.QUESTION_MESSAGE,null,nums,nums[0]));
-        
-        hp.remove(x);
-        //hp.save();
-        assignments.revalidate();
+        String intString=(String)JOptionPane.showInputDialog(frame,"Which assignment do you want to remove?","Remove",JOptionPane.QUESTION_MESSAGE,null,nums,nums[0]);
+        if(intString!=null){
+          int x=Integer.parseInt(intString);
+          
+          hp.remove(x);
+          //hp.save();
+          assignments.revalidate();
+        }
       }
     }
     else if (e.getActionCommand().equals("save"))
