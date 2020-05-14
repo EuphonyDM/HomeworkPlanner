@@ -28,7 +28,7 @@ public class MyTable extends AbstractTableModel
     else if(col==1)
       return "NAME";
     else if(col==2)
-      return ("DATE");
+      return ("DUE DATE");
     else
       throw new RuntimeException("invalid col number (must be 0-2)");
   }

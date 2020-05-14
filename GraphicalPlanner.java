@@ -94,7 +94,7 @@ public class GraphicalPlanner implements ActionListener
       
       String n=(String)JOptionPane.showInputDialog(frame,"Enter assignment name:","Add",1,null,null,null);
       if(n!=null){
-        String dateString=(String)JOptionPane.showInputDialog(frame,"Enter assignment date:\n(mm/dd/yy)","Add",1,null,null,null);
+        String dateString=(String)JOptionPane.showInputDialog(frame,"Enter assignment due date:\n(mm/dd/yy)","Add",1,null,null,null);
         if(dateString!=null){
           Date d=Date.parseDate(dateString);
           
