@@ -204,12 +204,22 @@ public class Date
   }
   
   public static Date parseDate(String s)// assumes mm*dd*yy
-  {                                     // * can be anything
-    int[] d = new int[3];
-    d[1]=Integer.parseInt(s.substring(0,2));
-    d[2]=Integer.parseInt(s.substring(3,5));
-    d[0]=Integer.parseInt(s.substring(6,8));
-    return new Date(d);
+  {                                     // * can be / or -
+    int[] date = new int[3];
+    String m="";
+    int i;
+    for(i=0;!s.substring(i,i+1).equals("/")&&!s.substring(i,i+1).equals("-");i++){
+      m+=s.substring(i,i+1);
+    }
+    date[1]=Integer.parseInt(m);
+    String d="";
+    int j;
+    for(j=i+1;!s.substring(j,j+1).equals("/")&&!s.substring(j,j+1).equals("-");j++){
+      d+=s.substring(j,j+1);
+    }
+    date[2]=Integer.parseInt(d);
+    date[0]=Integer.parseInt(s.substring(j+1));
+    return new Date(date);
   }
   
   public static Date randomDate()
