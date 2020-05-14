@@ -13,7 +13,8 @@ public class GraphicalPlanner implements ActionListener
   public static void main(String[] args)
   {
     String u=(String)JOptionPane.showInputDialog(null,"Enter username:","Username",1,null,null,null);
-    new GraphicalPlanner(u);
+    if(u!=null)
+      new GraphicalPlanner(u);
   }
   
   public GraphicalPlanner(String u)
