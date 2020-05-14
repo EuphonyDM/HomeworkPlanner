@@ -111,11 +111,11 @@ public class GraphicalPlanner implements ActionListener
       if(hp.getArray().length>0){
         String[] nums=new String[hp.getArray().length];
         for(int i=0;i<nums.length;i++)
-          nums[i]=""+i;
+          nums[i]=""+i+" - "+hp.getArray()[i].getName();
         
         String intString=(String)JOptionPane.showInputDialog(frame,"Which assignment do you want to remove?","Remove",JOptionPane.QUESTION_MESSAGE,null,nums,nums[0]);
         if(intString!=null){
-          int x=Integer.parseInt(intString);
+          int x=Integer.parseInt(intString.substring(0,1));
           
           hp.remove(x);
           //hp.save();
