@@ -45,10 +45,10 @@ public class GraphicalPlanner implements ActionListener
     removeButton.setActionCommand("remove");
     frame.add(removeButton);
     
-    JButton saveButton=new JButton("Save");
+    JButton saveButton=new JButton("Other");
     saveButton.setBounds(10,250,80,40);
     saveButton.addActionListener(this);
-    saveButton.setActionCommand("save");
+    saveButton.setActionCommand("other");
     frame.add(saveButton);
     
     JButton quitButton=new JButton("Quit");
@@ -99,7 +99,7 @@ public class GraphicalPlanner implements ActionListener
           Date d=Date.parseDate(dateString);
           
           hp.add(new Homework(n,d));
-          //hp.save();
+          hp.save();
           assignments.revalidate();
           //updateDisplay();
         }
@@ -118,16 +118,16 @@ public class GraphicalPlanner implements ActionListener
           int x=Integer.parseInt(intString.substring(0,1));
           
           hp.remove(x);
-          //hp.save();
+          hp.save();
           assignments.revalidate();
         }
       }
     }
-    else if (e.getActionCommand().equals("save"))
+    else if (e.getActionCommand().equals("other"))
     {
-      System.out.println("saving");
+      System.out.println("other");
       
-      hp.save();
+      //hp.save();
       //assignments.repaint();
     }
     else if (e.getActionCommand().equals("quit"))
