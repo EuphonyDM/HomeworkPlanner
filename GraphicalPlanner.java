@@ -86,7 +86,7 @@ public class GraphicalPlanner implements ActionListener
       System.out.println("helping");
       
       JOptionPane.showMessageDialog(frame, "Add: Create a new assignment\nRemove: Remove an assignment\n"+
-                                           "Save: Saves the list of assignments\nQuit: Quits the application");
+                                           "Other: Currently nothing\nQuit: Quits the application");
     }
     else if (e.getActionCommand().equals("add"))
     {
